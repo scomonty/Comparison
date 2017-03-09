@@ -1,11 +1,12 @@
 
-var superArray=[];
-var superArrayTwo=[];
+
 
 function compare(event) {
 	event.preventDefault();
-	var input = document.getElementById('textTwo').value;
-	var inputTwo = document.getElementById('textOne').value;
+	var input = document.getElementById('textTwo').value,
+	inputTwo = document.getElementById('textOne').value,
+	superArray=[],
+	superArrayTwo=[];
 
 
 	inputTwo = inputTwo.replace(/\n/g, " ");
@@ -32,39 +33,37 @@ function compare(event) {
 			superArrayTwo.push(n[i]);
 	}
 
-$(document).ready(function() {
-
-for (var x = superArray.length - 1; x >= 0; x--) {
-	$('#res').append('<li>' + superArray[x] + '</li>');
-}
-});
+var results = getMatch();
+	
 
 
-
-function getMatch(a, b) {
-    var matches = [];
-    for ( var i = 0; i < a.length; i++ ) {
-        for ( var e = 0; e < b.length; e++ ) {
-            if ( a[i] === b[e] ) matches.push( a[i] );
-        }
-    }
-    return matches;
-}
-var results = getMatch(superArray, superArrayTwo);
-}
-
-
-
-
-$(document).ready(function() {
+	function getMatch() {
+	    var matches = [];
+	    for ( var i = 0; i < superArray.length; i++ ) {
+	        for ( var e = 0; e < superArrayTwo.length; e++ ) {
+	            if ( superArray[i] === superArrayTwo[e] ) matches.push( superArrayTwo[e] );
+	        }
+	    }
+	    return matches;
+	}
+	$(document).ready(function() {
 	for (var x = results.length - 1; x >= 0; x--) {
 		$('#res').append('<li>' + results[x] + '</li>');
+		console.log(results.length);
 	}
+
 });
+}
 
 
-function clearContents(a,b) {
+
+
+
+
+
+function clearContents(a,b,c) {
       document.getElementById(a).value = "";
       document.getElementById(b).value = "";
+      document.getElementById(c).innerHTML = "";
 }
 
