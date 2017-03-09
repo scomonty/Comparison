@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		
+	</header>
+	<div class="top">
+		<button onclick="clearContents('textOne','textTwo')">Clear</button>
+	</div>
+	<div class="container">
+	<form>
+		<textarea name="textarea" id="textTwo" cols="60" rows="20"></textarea>
+		<textarea name="textarea" id="textOne" cols="60" rows="20"></textarea>
+	</form>
+	<div class="buttonContainer">
+			<button onclick="compare(event)">Compare</button>
+	</div>
+<div id="results" class="results">
+	<ol id="res">
+	</ol>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
