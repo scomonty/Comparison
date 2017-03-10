@@ -48,6 +48,9 @@ textarea {
 .results {
 	color:#fff;
 }
+.results ul {
+	list-style-type: none; 
+}
 
 .top {
 	text-align: right;
